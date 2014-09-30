@@ -1,0 +1,23 @@
+<div>
+  <ul class="nav nav-pills">
+    ...
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <span class="glyphicon glyphicon-align-justify"</span> <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        ...
+      </ul>
+    </li>
+    ...
+  </ul>
+  <div class="collage">
+    <section class="images">
+      <ul class="imgGrid">
+          <li class='pic' ng-repeat="i in posts | limitTo:80" ng-show="$index > 0">
+              <span ><img style="height: 300px" src="{{i.data.url}}" alt="{{i.data.subreddit}} images"/></span>
+          </li>
+      </ul>
+    </section>
+  </div>
+</div>
