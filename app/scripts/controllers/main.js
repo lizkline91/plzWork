@@ -8,7 +8,7 @@
  * Controller of the stacksonstacksApp
  */
 angular.module('stacksonstacksApp')
-  .controller('MainCtrl', function ($scope, $log, myService) {
+  .controller('MainCtrl',['$scope', 'myService', '$location', '$routeParams', function ($scope, myService, $location, $routeParams, $log) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -22,21 +22,16 @@ angular.module('stacksonstacksApp')
         }
       }
 
-      europeana.search( 'vincent van gogh', myCallback )
-
-        $scope.subRedditName = "historyporn";
-
-        myService.getReddit($scope.subRedditName).then(function(posts) {
-            $log.info(posts.data.data.children);
-            $scope.posts = posts.data.data.children;
-
+      $scope.search = function (searchString) {
+          console.log(searchString);
+        myService.doSearch(searchString).success(function (response) {
+          // nothing
         });
 
-        $scope.getTheReddit = function (x) {
-            myService.getReddit(x).then(function(posts) {
-                $log.info(posts.data.data.children);
-                $scope.posts = posts.data.data.children;
+      };
+      window.doIt = function doIt(data) {
+          console.log("dummy callback function");
+          $scope.result = data;
+        }
 
-            });
-        };
-  });
+    }]);

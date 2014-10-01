@@ -1,0 +1,10 @@
+
+<form action="" ng-submit="search(searchTerm)">
+<input type="text" ng-model="searchTerm" placeholder="search">
+<button type="submit">Search</button>
+</form>
+
+<div ng-repeat="item in result.items">
+  <h2>{{item.title[0]}}</h2>
+  <img ng-src="{{item.edmPreview[0]}}" alt="">
+</div>

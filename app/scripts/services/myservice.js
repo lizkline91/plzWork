@@ -7,20 +7,26 @@
  * # myService
  * Service in the stacksonstacksApp.
  */
-angular.module('stacksonstacksApp')
-  .service('myService', function myService($http, $rootScope, $log) {
-    // AngularJS will instantiate a singleton by calling "new" on this function
 
-            var getReddit = function (x) {
-            var urlBase = "http://www.reddit.com/r/" + x + ".json";
-            return $http.get(urlBase);
-        };
+  (function () {
+            "use strict";
 
-            return {
-              getReddit: getReddit
+            angular
+                .module('stacksonstacksApp')
+                .factory('myService', ['$http', '$rootScope', function ($http, $rootScope) {
+                    var wsKey = "rCQ7ohVV2";
+                    var doSearch = function (searchString) {
 
-          }
-        });
+                    return $http.jsonp("http://www.europeana.eu/api/v2/search.json?wskey=" + wsKey + "&query=" + searchString + "&callback=doIt");
+
+                    };
+
+                    return {
+                      doSearch: doSearch
+                    };
+
+                }]);
+        })();
 
 
 //http://europeana.eu/api//v2/search.json?wskey=rCQ7ohVV2&query=Home&start=1&rows=24&profile=standard

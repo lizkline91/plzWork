@@ -23,6 +23,11 @@ a{
   padding:5px;
   font-weight:thin;
 }
+.pic:hover{
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
+}
+
 a:hover{
   font-size:1.4em;
 }
@@ -39,12 +44,34 @@ a:hover{
   padding-bottom: 19px;
 }
 
-.collage{
-  width:100%;
-  border:1px solid red;
+.imagegrid{
+  display:inline-block;
+  list-style-type:none;
+  text-align:center;
 }
+ul .imagegrid li{
+  display:inline-block;
+  height:auto;
+  margin: 0 1em 1em 0;
+  position: relative;
+  width:auto;
+}*/
 
-
+*.text-content{
+  background: rgba(0,0,0,0.5);
+  color:white;
+  left:0;
+  cursor:pointer;
+  position: absolute;
+  width: 10%;
+  height: 5%;
+}
+.text-content span{
+  display:table-cell;
+  padding:5px;
+  text-align: center;
+  vertical-align: middle;
+}
 
 /* Custom page footer */
 .footer {
@@ -56,7 +83,7 @@ a:hover{
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 95%;
+    width: 100%;
     }
 }
 

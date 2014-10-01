@@ -12,12 +12,18 @@
     ...
   </ul>
   <div class="collage">
-    <section class="images">
-      <ul class="imgGrid">
-          <li class='pic' ng-repeat="i in posts | limitTo:80" ng-show="$index > 0">
-              <span ><img style="height: 300px" src="{{i.data.url}}" alt="{{i.data.subreddit}} images"/></span>
-          </li>
-      </ul>
-    </section>
+    <form action="" ng-submit="search(searchTerm)">
+    <input type="text" ng-model="searchTerm" placeholder="search">
+    <button type="submit">Search</button>
+    </form>
+
+    <ul class="imagegrid" ng-repeat="item in result.items">
+      <li>
+        <a href="http://localhost:9000/?#/user">
+          <img class="pic" ng-src="{{item.edmPreview[0]}}" alt="">
+          <span class="text-content"><span>stack</span><span>+</span></span>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>

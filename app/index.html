@@ -19,6 +19,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
   </head>
   <body ng-app="stacksonstacksApp">
     <!--[if lt IE 7]>
@@ -31,17 +32,13 @@
         <div class="navtop">
           <ul class="navright pull-right">
 
-            <li class="active"><a ng-href="#">Home</a></li>
+            <li class="active"><a ng-href="#">home</a></li>
             <!-- //angularfire -->
-            <li><a ng-href="#/chat">chat</a></li>
+            <li><a ng-href="#/user">stacks</a></li>
             <li>
               <a ng-hide-auth="" href="#/login">log in</a>
               <a ng-show-auth="" href="#/account">profile</a>
             </li>
-            <li><form ng-submit="getTheReddit(subRedditName)" action="">
-                <input class="wide cl-white" type="text" ng-model="subRedditName" placeholder="Images Subreddit"/>
-                <input ng-hide="true" type="submit"></input>
-            </form></li>
             </ul>
           <img src="images/stackLogo.png"></img>
 
@@ -78,7 +75,7 @@
     <!-- bower:js -->
     <!-- endbower -->
     <!-- endbuild -->
-        <script src="../node_modules/europeana/europeana.js"></script>
+
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/json3/lib/json3.js"></script>
@@ -94,6 +91,7 @@
         <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
         <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
 
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
