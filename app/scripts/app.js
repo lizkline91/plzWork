@@ -18,5 +18,6 @@ angular.module('stacksonstacksApp', [
     'ngTouch',
     'firebase',
     'firebase.utils',
-    'simpleLogin'
+    'simpleLogin',
+    'gridster'
   ]);

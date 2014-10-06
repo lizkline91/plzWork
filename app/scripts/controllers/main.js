@@ -16,9 +16,9 @@ angular.module('stacksonstacksApp')
     ];
       function myCallback( error, data ) {
         if( err ) {
-        console.log( error, error.stack )
+        console.log( error, error.stack );
         } else {
-        console.log( data )
+        console.log( data );
         }
       }
 
@@ -26,7 +26,7 @@ angular.module('stacksonstacksApp')
           console.log(searchString);
         myService.doSearch(searchString).success(function (response) {
           // nothing
-          $route.reload()
+          $route.reload();
         });
 
       };
@@ -38,10 +38,12 @@ angular.module('stacksonstacksApp')
       var auth = $firebaseSimpleLogin(fbutil.ref());
       auth.$getCurrentUser().then(function (user) {
           $rootScope.currentUser = user;
-      })
+      });
 
 
       $scope.addSomething = function (item) {
+        console.log("hey");
+        console.log($rootScope.currentUser);
         var ref = fbutil.ref('users');
         var newColItem = angular.copy(item);
         console.log($rootScope.currentUser.uid);

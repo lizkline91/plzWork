@@ -14,20 +14,7 @@ angular.module('stacksonstacksApp')
       'AngularJS',
       'Karma'
     ];
-    var gridster;
-
-    $(function(){
-
-      gridster = $(".gridster > ul").gridster({
-          widget_margins: [10, 10],
-          widget_base_dimensions: [100, 100],
-          min_cols: 3,
-        max_cols:5
-      }).data('gridster');
-
-    });
-
-
+  
 
     var auth = $firebaseSimpleLogin(fbutil.ref());
     auth.$getCurrentUser().then(function (user) {
@@ -43,11 +30,3 @@ angular.module('stacksonstacksApp')
       var ref = fbutil.ref('users');
       ref.child($rootScope.currentUser.uid).child('collections').push(something);
     }
-    $scope.addSomething = function(item) {
-        if( newColItem ) {
-          // push a message to the end of the array
-          $scope.collections.$add(newColItem)
-            // display any errors
-            .catch(alert);
-        }
-      };
