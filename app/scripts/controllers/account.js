@@ -7,7 +7,7 @@
  * Provides rudimentary account management functions.
  */
 angular.module('stacksonstacksApp')
-  .controller('AccountCtrl', function ($scope, user, simpleLogin, fbutil, $timeout) {
+  .controller('AccountCtrl', function ($rootScope,$scope, user, simpleLogin, fbutil, $timeout) {
     $scope.user = user;
     $scope.logout = simpleLogin.logout;
     $scope.messages = [];

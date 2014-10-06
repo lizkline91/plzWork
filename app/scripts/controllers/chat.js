@@ -7,9 +7,18 @@
  * A demo of using AngularFire to manage a synchronized list.
  */
 angular.module('stacksonstacksApp')
-  .controller('ChatCtrl', function ($scope, fbutil, $timeout) {
+  .controller('ChatCtrl', function ($firebaseSimpleLogin, $rootScope, $scope, simpleLogin, fbutil, $timeout) {
     // synchronize a read-only, synchronized array of messages, limit to most recent 10
     $scope.messages = fbutil.syncArray('messages', {limit: 10});
+
+    var auth = $firebaseSimpleLogin(fbutil.ref());
+    auth.$getCurrentUser().then(function (user) {
+        $rootScope.currentUser = user;
+
+    })
+
+
+    $scope.users = fbutil.syncArray('users');
 
     // display any errors
     $scope.messages.$loaded().catch(alert);
@@ -24,10 +33,34 @@ angular.module('stacksonstacksApp')
       }
     };
 
+
     function alert(msg) {
       $scope.err = msg;
       $timeout(function() {
         $scope.err = null;
       }, 5000);
     }
+
+    function loadProfile(user) {
+      if( $scope.profile ) {
+        $scope.profile.$destroy();
+      }
+      fbutil.syncObject('users/'+user.uid).$bindTo($scope, 'profile');
+    }
   });
+
+  // $scope.users = fbutil.syncArray('users');
+
+  $scope.users.currentUser.collections = fbutil.syncArray('collections');
+  $scope.addSomething = function (something) {
+    var ref = fbutil.ref('users');
+    ref.child($rootScope.currentUser.uid).child('collections').push(something);
+  }
+  $scope.addSomething = function(item) {
+      if( newColItem ) {
+        // push a message to the end of the array
+        $scope.collections.$add(newColItem)
+          // display any errors
+          .catch(alert);
+      }
+    };

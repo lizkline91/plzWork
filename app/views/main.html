@@ -1,29 +1,15 @@
-<div>
-  <ul class="nav nav-pills">
-    ...
-    <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <span class="glyphicon glyphicon-align-justify"</span> <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu" role="menu">
-        ...
-      </ul>
-    </li>
-    ...
-  </ul>
   <div class="collage">
     <form action="" ng-submit="search(searchTerm)">
     <input type="text" ng-model="searchTerm" placeholder="search">
     <button type="submit">Search</button>
     </form>
 
-    <ul class="imagegrid" ng-repeat="item in result.items">
-      <li>
-        <a href="http://localhost:9000/?#/user">
-          <img class="pic" ng-src="{{item.edmPreview[0]}}" alt="">
-          <span class="text-content"><span>stack</span><span>+</span></span>
-        </a>
-      </li>
-    </ul>
+    <div class="image" data-content="+" ng-repeat="item in result.items">
+        <button ng-click="addSomething(item)">Add Item</button>
+        <img ng-src="{{item.edmPreview[0]}}" alt=""/>
+        <span class="text-content"><span ng-src="{{item.title[0]}}">{{item.title[0]}}</span>
+
+    </div>
   </div>
-</div>
+
+  <!-- {{currentUser | json }} -->

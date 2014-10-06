@@ -16,7 +16,7 @@
     .factory('simpleLogin', function($firebaseSimpleLogin, fbutil, $q, $rootScope, createProfile, changeEmail) {
       var auth = $firebaseSimpleLogin(fbutil.ref());
       var listeners = [];
-
+      $rootScope.auth = auth;
       function statusChange() {
         fns.initialized = true;
         fns.user = auth.user || null;

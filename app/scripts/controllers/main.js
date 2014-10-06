@@ -8,7 +8,7 @@
  * Controller of the stacksonstacksApp
  */
 angular.module('stacksonstacksApp')
-  .controller('MainCtrl',['$scope', 'myService', '$location', '$routeParams', function ($scope, myService, $location, $routeParams, $log) {
+  .controller('MainCtrl',['$scope', '$rootScope', '$firebaseSimpleLogin','myService', '$location', 'fbutil','$routeParams', function ($scope, $rootScope, $firebaseSimpleLogin, myService, $location, fbutil, $routeParams, $log) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -26,12 +26,26 @@ angular.module('stacksonstacksApp')
           console.log(searchString);
         myService.doSearch(searchString).success(function (response) {
           // nothing
+          $route.reload()
         });
 
       };
       window.doIt = function doIt(data) {
-          console.log("dummy callback function");
+
           $scope.result = data;
-        }
+        };
+
+      var auth = $firebaseSimpleLogin(fbutil.ref());
+      auth.$getCurrentUser().then(function (user) {
+          $rootScope.currentUser = user;
+      })
+
+
+      $scope.addSomething = function (item) {
+        var ref = fbutil.ref('users');
+        var newColItem = angular.copy(item);
+        console.log($rootScope.currentUser.uid);
+        ref.child($rootScope.currentUser.uid).child('collections').push(newColItem);
+      };
 
     }]);

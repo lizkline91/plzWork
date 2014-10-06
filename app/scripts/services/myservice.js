@@ -8,6 +8,7 @@
  * Service in the stacksonstacksApp.
  */
 
+
   (function () {
             "use strict";
 
@@ -15,9 +16,10 @@
                 .module('stacksonstacksApp')
                 .factory('myService', ['$http', '$rootScope', function ($http, $rootScope) {
                     var wsKey = "rCQ7ohVV2";
+                    var rows = 100;
                     var doSearch = function (searchString) {
 
-                    return $http.jsonp("http://www.europeana.eu/api/v2/search.json?wskey=" + wsKey + "&query=" + searchString + "&callback=doIt");
+                    return $http.jsonp("http://www.europeana.eu/api/v2/search.json?wskey=" + wsKey + "&query=" + searchString + "&rows=" + rows +"&callback=doIt"  );
 
                     };
 
@@ -26,7 +28,10 @@
                     };
 
                 }]);
+
         })();
+
+
 
 
 //http://europeana.eu/api//v2/search.json?wskey=rCQ7ohVV2&query=Home&start=1&rows=24&profile=standard
