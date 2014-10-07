@@ -9,27 +9,16 @@
  */
 angular.module('stacksonstacksApp')
   .controller('MainCtrl',['$scope', '$rootScope', '$firebaseSimpleLogin','myService', '$location', 'fbutil','$routeParams', function ($scope, $rootScope, $firebaseSimpleLogin, myService, $location, fbutil, $routeParams, $log) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-      function myCallback( error, data ) {
-        if( err ) {
-        console.log( error, error.stack );
-        } else {
-        console.log( data );
-        }
-      }
+
+
 
       $scope.search = function (searchString) {
           console.log(searchString);
-        myService.doSearch(searchString).success(function (response) {
-          // nothing
-          $route.reload();
-        });
+        myService.doSearch(searchString);
 
       };
+
+      // global that gets called when myService.doSearch(searchStr) is performed
       window.doIt = function doIt(data) {
 
           $scope.result = data;
@@ -49,5 +38,6 @@ angular.module('stacksonstacksApp')
         console.log($rootScope.currentUser.uid);
         ref.child($rootScope.currentUser.uid).child('collections').push(newColItem);
       };
+
 
     }]);

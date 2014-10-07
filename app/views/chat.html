@@ -1,6 +1,53 @@
 
-<h2>Collections</h2>
+<h2>user collections</h2>
 
+<div ng-repeat="user in users">
+  <h3>{{user.name()}}</h3>
+<div class="wrapper" width="100%" >
+  <div class="something" >
+    <div class="scrolls" ng-repeat="(key, value) in user.collections">
+      <div class="image">
+        <button class="eye" data-toggle="modal" data-target="#myModal{{$index}}">
+        <span class="glyphicon glyphicon-eye-open"></span>
+        </button>
+        <img ng-src="{{value.edmPreview[0]}}"  alt=""/>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <h4 class="modal-title" id="myModalLabel"><span ng-src="{{value.title[0]}}">{{value.title[0]}}</span></h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="leftModal" width="30%" ng-init="idx = $index">
+                            <img ng-src="{{value.edmPreview[0]}}" max-width="200px" alt=""/>
+                          </div>
+                          <div class="rightModal" width="40%">
+                            <h4 ng-src="{{value.dataProvider[0]}}">From the {{value.dataProvider[0]}}</h4>
+                            <h5 ng-src="{{value.provider}}">Category: {{value.provider}}</h5>
+                            <h5 ng-src="{{value.year}}">Year: {{value.year}}</h5>
+                            <h5 ng-src="{{value.edmIsShownAt}}">View: {{value.edmIsShownAt}}</h5>
+                            <h5 ng-src="{{value.country}}">Country: {{value.country}}</h5>
+                            <h5 ng-src="{{value.dcDescription[0]}}">Details: {{value.dcDescription[0]}}</h5>
+
+
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default blue" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-default blue" ng-click="addSomething(item)">Add Item</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 <!-- <form>
   <input placeholder="Message..." ng-model="newMessage">
   <button type="submit" ng-click="addSomething(newMessage);newMessage = null;">send</button>
@@ -9,21 +56,24 @@
 <!-- <ul id="messages" ng-show="messages.length">
   <li ng-repeat="message in messages | reverse">{{message.text}}</li>
 </ul> -->
-<div gridster="gridsterOpts" ng-repeat="user in users">
-  <div ng-repeat="(key, value) in user.collections">
-  	<ul>
-  		<li gridster-item="item"><img ng-src="{{value.edmPreview[0]}}" alt=""/>
-  			<!-- <input type="text" integer ng-model="item.row" size="1" />
-  			,
-  			<input type="text" integer ng-model="item.col" size="1" />
-  			<br />
-  			<input type="text" integer ng-model="item.sizeX" size="1" />
-  			x
-  			<input type="text" integer ng-model="item.sizeY" size="1" /> -->
-  		</li>
-  	</ul>
+<!-- <div class="gridContainer">
+  <div gridster="gridsterOpts" ng-repeat="user in users">
+    <div ng-repeat="(key, value) in user.collections">
+    	<ul>
+    		<li gridster-item="item"><img ng-src="{{value.edmPreview[0]}}" alt=""/>
+    		</li>
+    	</ul>
+    </div>
   </div>
-</div>
+</div> -->
+  <!-- {{ currentUser | json }}
+  <div gridster="gridsterOpts" ng-repeat="(key, value) in currentUser.collections">
+    <ul>
+      <li gridster-item="item"><img ng-src="{{value.edmPreview[0]}}" alt=""/>
+      </li>
+    </ul>
+  </div>
+</div> -->
 <!--
 <div ng-repeat="user in users">
   <div class="image" ng-repeat="(key, value) in user.collections">

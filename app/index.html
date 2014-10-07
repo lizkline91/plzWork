@@ -8,20 +8,16 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-
-
-    <link rel="stylesheet" href="bower_components/angular-gridster/dist/angular-gridster.min.css" />
-    <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"rel="stylesheet">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
   </head>
-  <body ng-app="stacksonstacksApp">
+  <body ng-app="stacksonstacksApp" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -30,25 +26,42 @@
     <div class="container">
       <div class="header">
         <div class="navtop">
-          <ul class="navright pull-right">
-
-            <li class="active"><a ng-href="#">home</a></li>
-            <!-- //angularfire -->
-            <li><a ng-href="#/user">stacks</a></li>
-            <li>
-              <a ng-hide-auth="" href="#/login">log in</a>
-              <a ng-show-auth="" href="#/account">profile</a>
-            </li>
-            </ul>
-          <img src="images/stackLogo.png"></img>
-
+          <img src="images/stackBlue2.png" width="150px"></img>
+          <div class="socialMedia">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-git"></i>
+          </div>
         </div>
       </div>
+      <nav class="navbar navbar-default" role="navigation">
+         <div class="navbar-header">
+            <a class="navbar-brand" href="#">Stack</a>
+         </div>
+         <div>
+            <form class="navbar-form navbar-left" role="search" ng-submit="search(searchTerm)">
+               <div class="form-group">
+                  <input type="text" class="form-control" ng-model="searchTerm" placeholder="Search">
+               </div>
+               <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+              <li><a href="#chat">collage</a></li>
+              <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+              <li><a href="#login">login</a></li>
+              <li><a href="#account">profile</a></li>
+            </ul>
+            <button type="button" class="btn btn-default navbar-btn">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+         </div>
+      </nav>
 
 
-
-      <div ng-view=""></div>
-
+      <div id="main">
+        <div ng-view=""></div>
+      </div>
       <div class="footer">
         <p><span class="glyphicon glyphicon-heart"></span> made by Liz Kline</p>
       </div>

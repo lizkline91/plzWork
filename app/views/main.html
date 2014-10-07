@@ -1,15 +1,44 @@
-  <div class="collage">
-    <form action="" ng-submit="search(searchTerm)">
-    <input type="text" ng-model="searchTerm" placeholder="search">
-    <button type="submit">Search</button>
-    </form>
 
-    <div class="image" data-content="+" ng-repeat="item in result.items">
-        <button ng-click="addSomething(item)">Add Item</button>
-        <img ng-src="{{item.edmPreview[0]}}" alt=""/>
-        <span class="text-content"><span ng-src="{{item.title[0]}}">{{item.title[0]}}</span>
+    <div class="imageContainer">
+      <div class="twoContainer">
+        <div class="image"  ng-repeat="item in result.items">
+            <button class="eye" data-toggle="modal" data-target="#myModal{{$index}}">
+            <span class="glyphicon glyphicon-eye-open"></span>
+            </button>
+            <img margin-top:"-30px" ng-src="{{item.edmPreview[0]}}" alt="{{$index}}"/>
 
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title" id="myModalLabel"><span ng-src="{{item.title[0]}}">{{item.title[0]}}</span></h4>
+                </div>
+                <div class="modal-body">
+                  <div class="leftModal" width="30%" ng-init="idx = $index">
+                    <img ng-src="{{item.edmPreview[0]}}" max-width="200px" alt=""/>
+                  </div>
+                  <div class="rightModal" width="40%">
+                    <h4 ng-src="{{item.dataProvider[0]}}">From the {{item.dataProvider[0]}}</h4>
+                    <h5 ng-src="{{item.provider}}">Category: {{item.provider}}</h5>
+                    <h5 ng-src="{{item.year}}">Year: {{item.year}}</h5>
+                    <h5 ng-src="{{item.edmIsShownAt}}">View: {{item.edmIsShownAt}}</h5>
+                    <h5 ng-src="{{item.country}}">Country: {{item.country}}</h5>
+                    <h5 ng-src="{{item.dcDescription[0]}}">Details: {{item.dcDescription[0]}}</h5>
+
+
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default blue" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-default blue" ng-click="addSomething(item)">Add Item</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- {{currentUser | json }} -->

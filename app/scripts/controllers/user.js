@@ -14,14 +14,12 @@ angular.module('stacksonstacksApp')
       'AngularJS',
       'Karma'
     ];
-  
+
 
     var auth = $firebaseSimpleLogin(fbutil.ref());
     auth.$getCurrentUser().then(function (user) {
         $rootScope.currentUser = user;
     });
-
-}]);
 
     $scope.users = fbutil.syncArray('users');
 
@@ -30,3 +28,6 @@ angular.module('stacksonstacksApp')
       var ref = fbutil.ref('users');
       ref.child($rootScope.currentUser.uid).child('collections').push(something);
     }
+
+
+}]);

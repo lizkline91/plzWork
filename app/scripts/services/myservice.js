@@ -18,7 +18,7 @@
                     var wsKey = "rCQ7ohVV2";
                     var rows = 100;
                     var doSearch = function (searchString) {
-
+                    console.log("searching")
                     return $http.jsonp("http://www.europeana.eu/api/v2/search.json?wskey=" + wsKey + "&query=" + searchString + "&rows=" + rows +"&callback=doIt"  );
 
                     };
