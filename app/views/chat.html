@@ -1,8 +1,9 @@
 
-<h2>user collections</h2>
+<h2><a href="#chat">All Stacks</a>/<a href="#user">Your Stack</a></h2>
 
 <div ng-repeat="user in users">
-  <h3>{{user.name()}}</h3>
+  <h3>{{user.name}}</h3>
+  <img>{{user.prof}}</img>
 <div class="wrapper" width="100%" >
   <div class="something" >
     <div class="scrolls" ng-repeat="(key, value) in user.collections">
@@ -26,10 +27,10 @@
                             <img ng-src="{{value.edmPreview[0]}}" max-width="200px" alt=""/>
                           </div>
                           <div class="rightModal" width="40%">
-                            <h4 ng-src="{{value.dataProvider[0]}}">From the {{value.dataProvider[0]}}</h4>
+                            <h4 ng-src="{{value.dataProvider0}}">From the {{value.dataProvider0}}</h4>
                             <h5 ng-src="{{value.provider}}">Category: {{value.provider}}</h5>
-                            <h5 ng-src="{{value.year}}">Year: {{value.year}}</h5>
-                            <h5 ng-src="{{value.edmIsShownAt}}">View: {{value.edmIsShownAt}}</h5>
+                            <h5 ng-src="{{value.type}}">Type: {{value.type}}</h5>
+                            <h5 ng-src="{{value.guid}}">View:<a href="{{value.guid}}">{{value.title[0]}}</a></h5>
                             <h5 ng-src="{{value.country}}">Country: {{value.country}}</h5>
                             <h5 ng-src="{{value.dcDescription[0]}}">Details: {{value.dcDescription[0]}}</h5>
 

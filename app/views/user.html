@@ -1,0 +1,12 @@
+<h2><a href="#chat">All Stacks</a>/<a href="#user">Your Stack</a></h2>
+
+
+<div class="gridContainer">
+  <div gridster="gridsterOpts" ng-repeat="user in users">
+    <div ng-repeat="(key, value) in user.collections">
+
+        <div display:"inline-block" gridster-item="item"><img ng-src="{{value.edmPreview[0]}}" alt=""/>
+
+    </div>
+  </div>
+</div>
