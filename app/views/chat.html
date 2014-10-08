@@ -6,7 +6,7 @@
 <div class="wrapper" width="100%" >
   <div class="something" >
     <div class="scrolls" ng-repeat="(key, value) in user.collections">
-      <div class="image">
+      <div class="imageScroll">
         <button class="eye" data-toggle="modal" data-target="#myModal{{$index}}">
         <span class="glyphicon glyphicon-eye-open"></span>
         </button>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-default blue" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-default blue" ng-click="addSomething(item)">Add Item</button>
+                          <button type="button" class="btn btn-default blue" data-dismiss="modal" ng-click="addSomething(item)">Add Item</button>
                         </div>
                       </div>
                     </div>

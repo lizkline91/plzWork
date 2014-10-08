@@ -38,6 +38,7 @@ a{
   font-size:30px;
   color:lightblue;
 }
+
 .imageContainer{
   background:#EFEFEF;
   box-shadow: 1px 1px 10px #999;
@@ -70,6 +71,32 @@ a{
 
 
 .image:hover .eye {
+  visibility: visible;
+  background-color:#26304f;
+  width:100%;
+  opacity:.7;
+}
+
+.imageScroll {
+  position: relative;
+  display:inline-block;
+  padding:4px;
+}
+
+.imageScroll .eye {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  font-size:3em;
+  visibility: hidden;
+
+}
+
+
+.imageScroll:hover .eye {
   visibility: visible;
   background-color:#26304f;
   width:100%;

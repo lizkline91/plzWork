@@ -27,18 +27,20 @@ angular.module('stacksonstacksApp')
       else {
         simpleLogin.createAccount(email, pass/*, name*/)
           .then(function() {
-            $location.path('/account');
+            $location.path('/chat');
           }, function(err) {
             $scope.err = err;
           });
       }
     };
 
+
+
     function login(provider, opts) {
       $scope.err = null;
       simpleLogin.login(provider, opts).then(
         function() {
-          $location.path('/account');
+          $location.path('/chat');
         },
         function(err) {
           $scope.err = err;
