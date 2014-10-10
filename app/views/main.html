@@ -5,7 +5,8 @@
             <button class="eye" data-toggle="modal" data-target="#myModal{{$index}}">
             <span class="glyphicon glyphicon-eye-open"></span>
             </button>
-            <img margin-top:"-30px" ng-src="{{item.edmPreview[0]}}" alt="{{$index}}"/>
+
+            <img class="mainImg" ng-src="{{item.edmPreview[0]}}" alt="{{$index}}"/>
 
 
 
@@ -21,13 +22,15 @@
                   <div class="leftModal" width="30%" ng-init="idx = $index">
                     <img ng-src="{{item.edmPreview[0]}}" max-width="200px" alt=""/>
                   </div>
-                  <div class="rightModal" width="40%">
-                    <h4 ng-src="{{item.dataProvider[0]}}">From the {{item.dataProvider[0]}}</h4>
-                    <h5 ng-src="{{item.provider}}">Category: {{item.provider}}</h5>
-                    <h5 ng-src="{{item.year}}">Year: {{item.year}}</h5>
-                    <h5 ng-src="{{item.edmIsShownAt}}">View: {{item.edmIsShownAt}}</h5>
-                    <h5 ng-src="{{item.country}}">Country: {{item.country}}</h5>
-                    <h5 ng-src="{{item.dcDescription[0]}}">Details: {{item.dcDescription[0]}}</h5>
+                  <div class="rightModal">
+                    <div class="textDetes">
+                      <h4 ng-src="{{item.dataProvider[0]}}">From the {{item.dataProvider[0]}}</h4>
+                      <h5 ng-src="{{item.provider}}">Category: {{item.provider}}</h5>
+                      <h5 ng-src="{{item.year}}">Year: {{item.year}}</h5>
+                      <h5 ng-src="{{item.guid}}">View: <a href="{{item.guid}}">{{item.title[0]}}</a></h5>
+                      <h5 ng-src="{{item.country}}">Country: {{item.country}}</h5>
+                      <h5 ng-src="{{item.dcDescription[0]}}">Details: {{item.dcDescription[0]}}</h5>
+                    </div>
 
 
                   </div>

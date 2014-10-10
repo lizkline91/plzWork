@@ -61,4 +61,16 @@ angular.module('stacksonstacksApp')
       }
       fbutil.syncObject('users/'+user.uid).$bindTo($scope, 'profile');
     }
+
+    // Create image object
+    var img = document.createElement("img");
+
+    // Set source to profile image url
+    img.src = user.profile_image_url;
+
+    // Wait for image to load
+    img.onload = function(){
+      // Callback
+    }
+    
   });

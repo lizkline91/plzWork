@@ -15,7 +15,7 @@ angular.module('stacksonstacksApp')
       $scope.search = function (searchString) {
           console.log(searchString);
         myService.doSearch(searchString);
-
+        $location.path("#/");
       };
 
       // global that gets called when myService.doSearch(searchStr) is performed
@@ -37,6 +37,7 @@ angular.module('stacksonstacksApp')
         var newColItem = angular.copy(item);
         console.log($rootScope.currentUser.uid);
         ref.child($rootScope.currentUser.uid).child('collections').push(newColItem);
+        $scope.modal = false;
       };
 
 

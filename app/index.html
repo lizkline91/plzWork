@@ -12,8 +12,10 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/angular-gridster/dist/angular-gridster.min.css" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
 
   </head>
@@ -29,9 +31,7 @@
         <div class="navtop">
           <a href="#chat"><img src="images/stackBlue2.png" width="200px"></img></a>
           <div class="socialMedia">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-git"></i>
+            <a href="https://github.com/lizkline91"><i class="fa fa-git"></i></a>
           </div>
         </div>
       </div>
@@ -57,17 +57,13 @@
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                       <ul class="nav navbar-nav">
                           <li><a href="#">Home</a></li>
-                          <li><a href="#chat">Stacks</a></li>
-                          <!-- <li class="dropdown">
-                              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
+                          <li class="dropdown">
+                              <a href="#chat" data-toggle="dropdown" class="dropdown-toggle">Stacks <b class="caret"></b></a>
                               <ul class="dropdown-menu">
-                                  <li><a href="#">Inbox</a></li>
-                                  <li><a href="#">Drafts</a></li>
-                                  <li><a href="#">Sent Items</a></li>
-                                  <li class="divider"></li>
-                                  <li><a href="#">Trash</a></li>
+                                  <li><a href="#chat">All Stacks</a></li>
+                                  <li><a href="#user">Users Stack</a></li>
                               </ul>
-                          </li> -->
+                          </li>
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
                           <li class="dropdown">
@@ -115,33 +111,31 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+    <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
     <!-- endbower -->
+    <script src="bower_components/angular-gridster/src/angular-gridster.js"></script>
+    <script src="bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
     <!-- endbuild -->
 
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/json3/lib/json3.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/angular-resource/angular-resource.js"></script>
-        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.js"></script>
-        <script src="bower_components/angular-touch/angular-touch.js"></script>
-        <script src="bower_components/angular-route/angular-route.js"></script>
-        <script src="bower_components/firebase/firebase.js"></script>
-        <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
-        <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
-        <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+
+
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-
-        <!-- angular gridster-->
-        <script src="bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
-        <script src="bower_components/angular-gridster/src/angular-gridster.js"></script>
-
-
-        <script src="scripts/nav.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/nav.js"></script>
         <script src="scripts/angularfire/config.js"></script>
         <script src="scripts/angularfire/firebase.utils.js"></script>
         <script src="scripts/controllers/chat.js"></script>
@@ -154,9 +148,12 @@
         <script src="scripts/routes.js"></script>
         <script src="scripts/controllers/user.js"></script>
         <script src="scripts/services/myservice.js"></script>
+        <script type="text/javascript" src="https://gridster.net/assets/js/libs/jquery-1.7.2.min.js"></script>
         <!-- endbuild -->
 
-        <script type="text/javascript" src="//gridster.net/assets/js/libs/jquery-1.7.2.min.js"></script>
+
+
+
 
 
 
