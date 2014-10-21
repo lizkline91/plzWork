@@ -1,35 +1,41 @@
 {
   "name": "angular-gridster",
-  "homepage": "https://github.com/tmrudick/angular-gridster",
-  "authors": [
-    "Tom Rudick <tmrudick@gmail.com>"
-  ],
-  "description": "Angular directives for Gridster.js",
-  "main": "lib/angular-gridster.js",
-  "keywords": [
-    "angular",
-    "gridster",
-    "directives"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+  "version": "0.10.7",
+  "main": [
+    "src/angular-gridster.js",
+    "dist/angular-gridster.min.css"
   ],
   "dependencies": {
-    "gridster": "~0.2.1"
+    "angular": ">= 1.2.0",
+    "javascript-detect-element-resize": "sdecima/javascript-detect-element-resize#~0.5.1"
   },
-  "_release": "c49200c44c",
+  "devDependencies": {
+    "angular-mocks": ">= 1.2.0",
+    "angular-animate": ">= 1.2.0",
+    "jquery": "*",
+    "jquery-simulate": "*"
+  },
+  "ignore": [
+    "test",
+    ".bowerrc",
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    ".jshintrc",
+    ".travis.yml",
+    "Gruntfile.js",
+    "karma.conf.js",
+    "ptor.conf.js",
+    "package.json"
+  ],
+  "homepage": "https://github.com/ManifestWebDesign/angular-gridster",
+  "_release": "0.10.7",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "c49200c44c4ee8dd4a1fc7263d48d9a2d5a2581f"
+    "type": "version",
+    "tag": "v0.10.7",
+    "commit": "689a87906528c181afd6f18fb344f9d6f531f9bc"
   },
-  "_source": "https://github.com/tmrudick/angular-gridster.git",
+  "_source": "git://github.com/ManifestWebDesign/angular-gridster.git",
   "_target": "*",
-  "_originalSource": "https://github.com/tmrudick/angular-gridster.git",
-  "_direct": true
+  "_originalSource": "angular-gridster"
 }
