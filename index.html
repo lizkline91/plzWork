@@ -1,0 +1,163 @@
+<!pdoctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href=".bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/angular-gridster/dist/angular-gridster.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <!-- endbuild -->
+
+  </head>
+  <body ng-app="stacksonstacksApp" ng-controller="MainCtrl">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <div class="container">
+      <div class="header">
+        <div class="navtop">
+          <a href="#chat"><img src="dist/images/stackBlue2.png" width="200px"></img></a>
+          <div class="socialMedia">
+            <a href="https://github.com/lizkline91"><i class="fa fa-git"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="bs-example">
+          <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="container">
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                      <form class="navbar-form navbar-left" role="search" ng-submit="search(searchTerm)">
+                         <div class="form-group">
+                            <input type="text" class="form-control" width="200px" ng-model="searchTerm" placeholder="Search">
+                         </div>
+                         <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                      </form>
+                  </div>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav">
+                          <li><a href="#">Home</a></li>
+                          <li class="dropdown">
+                              <a href="#chat" data-toggle="dropdown" class="dropdown-toggle">Stacks <b class="caret"></b></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#chat">All Stacks</a></li>
+                                  <li><a href="#user">Users Stack</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                      <ul class="nav navbar-nav navbar-right">
+                          <li class="dropdown">
+                              <a href="#" data-toggle="dropdown" class="dropdown-toggle">User <b class="caret"></b></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#account">Profile</a></li>
+                                  <li><a href="#login">Login</a></li>
+                                  <li class="divider"></li>
+
+                              </ul>
+                          </li>
+                      </ul>
+                  </div><!-- /.navbar-collapse -->
+              </div>
+          </nav>
+      </div>
+
+
+      <div id="main">
+        <div ng-view=""></div>
+      </div>
+      <div class="footer">
+        <p><span class="glyphicon glyphicon-heart"></span> made by Liz Kline</p>
+      </div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+    <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <!-- endbower -->
+    <script src="bower_components/angular-gridster/src/angular-gridster.js"></script>
+    <script src="bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
+    <!-- endbuild -->
+
+
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="app/scripts/app.js"></script>
+        <script src="app/scripts/controllers/main.js"></script>
+        <script src="app/scripts/nav.js"></script>
+        <script src="app/scripts/angularfire/config.js"></script>
+        <script src="app/scripts/angularfire/firebase.utils.js"></script>
+        <script src="app/scripts/controllers/chat.js"></script>
+        <script src="app/scripts/filters/reverse.js"></script>
+        <script src="app/scripts/angularfire/simpleLogin.js"></script>
+        <script src="app/scripts/controllers/login.js"></script>
+        <script src="app/scripts/controllers/account.js"></script>
+        <script src="app/scripts/directives/ngShowAuth.js"></script>
+        <script src="app/scripts/directives/ngHideAuth.js"></script>
+        <script src="app/scripts/routes.js"></script>
+        <script src="app/scripts/controllers/user.js"></script>
+        <script src="app/scripts/services/myservice.js"></script>
+        <script src="https://gridster.net/assets/js/libs/jquery-1.7.2.min.js"></script>
+        <!-- endbuild -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>

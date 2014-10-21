@@ -1,7 +1,9 @@
 {
   "name": "stacksonstacks",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",
@@ -30,5 +32,22 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  }
+  },
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lizkline91/plzWork.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lizkline91/plzWork/issues"
+  },
+  "homepage": "https://github.com/lizkline91/plzWork"
 }
