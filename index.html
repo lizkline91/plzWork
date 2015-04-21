@@ -1,4 +1,4 @@
-<!pdoctype html>
+<!doctype html>
 <html class="no-js">
   <head>
     <meta charset="utf-8">
@@ -30,9 +30,6 @@
       <div class="header">
         <div class="navtop">
           <a href="#chat"><img src="dist/images/stackBlue2.png" width="200px"></img></a>
-          <div class="socialMedia">
-            <a href="https://github.com/lizkline91"><i class="fa fa-git"></i></a>
-          </div>
         </div>
       </div>
       <div class="bs-example">
@@ -102,54 +99,24 @@
        ga('send', 'pageview');
     </script>
 
-    <!-- build:js(.) scripts/oldieshim.js -->
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-    <!-- endbuild -->
+    <!-- core scripts -->
+    <script src="www/plugins/jquery-1.11.1.min.js"></script>
+    <script src="www/bootstrap/js/bootstrap.js"></script>
+    <script src="www/plugins/jquery.slimscroll.min.js"></script>
+    <script src="www/plugins/jquery.easing.min.js"></script>
+    <script src="www/plugins/appear/jquery.appear.js"></script>
+    <script src="www/plugins/jquery.placeholder.js"></script>
+    <script src="www/plugins/fastclick.js"></script>
+    <!-- /core scripts -->
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/json3/lib/json3.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/firebase/firebase.js"></script>
-    <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
-    <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
-    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
-    <!-- endbower -->
-    <script src="bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
-    <script src="bower_components/angular-gridster/src/angular-gridster.js"></script>
-    <!-- endbuild -->
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
 
 
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="app/scripts/app.js"></script>
-        <script src="app/scripts/controllers/main.js"></script>
-        <script src="app/scripts/nav.js"></script>
-        <script src="app/scripts/angularfire/config.js"></script>
-        <script src="app/scripts/angularfire/firebase.utils.js"></script>
-        <script src="app/scripts/controllers/chat.js"></script>
-        <script src="app/scripts/filters/reverse.js"></script>
-        <script src="app/scripts/angularfire/simpleLogin.js"></script>
-        <script src="app/scripts/controllers/login.js"></script>
-        <script src="app/scripts/controllers/account.js"></script>
-        <script src="app/scripts/directives/ngShowAuth.js"></script>
-        <script src="app/scripts/directives/ngHideAuth.js"></script>
-        <script src="app/scripts/routes.js"></script>
-        <script src="app/scripts/controllers/user.js"></script>
-        <script src="app/scripts/services/myservice.js"></script>
-        <script src="https://gridster.net/assets/js/libs/jquery-1.7.2.min.js"></script>
-        <!-- endbuild -->
+    <!-- template scripts -->
+    <script src="www/js/offscreen.js"></script>
+    <script src="www/js/main.js"></script>
+    <!-- /template scripts -->
 
 
 
