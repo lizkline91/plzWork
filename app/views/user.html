@@ -7,10 +7,11 @@
       <div ng-repeat="(key, value) in user.collections">
 
       	<ul>
-      	   <li gridster-item="item" ng-show="item in standardItems[1]">
+      	  <li gridster-item="item" ng-show="item in standardItems[1]">
             <img width="100%" ng-src="{{value.edmPreview[0]}}" alt=""/>
       		</li>
       	</ul>
+
       </div>
     </div>
   </div>

@@ -19,7 +19,7 @@
 		minColumns: 1, // minimum amount of columns the grid can scale down to
 		minRows: 1, // minimum amount of rows to show if the grid is empty
 		maxRows: 100, // maximum amount of rows in the grid
-		defaultSizeX: 2, // default width of an item in columns
+		defaultSizeX: 1, // default width of an item in columns
 		defaultSizeY: 1, // default height of an item in rows
 		saveGridItemCalculatedHeightInMobile: false, // grid item height in mobile display. true- to use the calculated height by sizeY given
 		resizable: { // options to pass to resizable handler
